@@ -1,0 +1,15 @@
+{% extends 'entries/base.html' %}
+{% block content %}
+
+<div class="col-md-8 mt-4">
+    <div class="card mb-4">
+        <div class="card">
+            <h4 class="card-header">Logout Successful</h4>
+            <div class="card-body">
+            <a class="btn btn-primary" href="{% url 'login' %}">Login Again ?</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

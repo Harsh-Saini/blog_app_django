@@ -1,0 +1,39 @@
+{% extends 'entries/base.html' %}
+{% block content %}
+<!-- Creating new Blog Entries -->
+<div class="col-md-8">
+
+    <h2 class="my-4">Login</h2>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-primary" href="{% url 'blog-home' %}">Back to Home</a>
+        </div>
+    </div>
+    <!-- Blog Post -->
+
+    <div class="card mb-4">
+
+        <div class="card-header">
+        <strong>Login to your Account</strong>
+        </div>
+        <div class="card-footer text-muted form-group" >
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary" type="submit">Login</button>
+            </form>
+        </div>
+
+
+            <div class="card mb-4">
+                <div class="card mt-4">
+                    <h6 class="card-header">Don't have an account ?</h6>
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="{% url 'register' %}">Register Here</a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+{% endblock %}

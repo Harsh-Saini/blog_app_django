@@ -1,0 +1,30 @@
+{% extends 'entries/base.html' %}
+{% block content %}
+<!-- Creating new Blog Entries -->
+<div class="col-md-8">
+
+    <h1 class="my-4">Page Heading
+        <small>Secondary Text</small>
+    </h1>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-primary" href="{% url 'blog-home' %}">Back to Home</a>
+        </div>
+    </div>
+    <!-- Blog Post -->
+
+    <div class="card mb-4">
+
+        <div class="card-header">
+        <strong>Create a new Blog Post</strong>
+        </div>
+        <div class="card-footer text-muted">
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-primary">Post Blog</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
